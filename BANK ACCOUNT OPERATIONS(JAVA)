@@ -1,0 +1,79 @@
+package hrrr;
+import java.util.Scanner;
+import java.util.HashSet;
+public class BankAc {
+public static void main(String args[])
+{
+	HashSet<String>b=new HashSet<String>();
+	Scanner sc=new Scanner(System.in);
+	System.out.println("***********************WELCOME TO SMS BANK***************************");
+	String user="sumanth";
+	int bal=0;
+	int amount=0;
+	String pas="sms@123";
+	System.out.println("ENTER YOUR USERNAME");
+	String u=sc.nextLine();
+	System.out.println("ENTER YOUR PASSWORD");
+	String P=sc.nextLine();
+	boolean n=true;
+	if(pas.equals(P) && user.equals(u))
+	while(n)
+	
+	{
+		System.out.print("HII SUMANTH M S!!!");
+		System.out.println("Choose below option for your account");
+		System.out.println("1.BALANCE");
+		System.out.println("2.DEPOSIT");
+		System.out.println("3.WITHDRAW");
+		System.out.println("4.TRANSACTION HISTORY");
+		System.out.println("5.EXIT");
+		System.out.println("enter your choice");
+		int ch=sc.nextInt();
+		 {
+		switch(ch)
+		{
+		case 1:System.out.println("your account balance is= "+bal);
+		break;
+		case 2:System.out.println("Enter the ammount to deposit");
+		int am=sc.nextInt();
+		b.add("you deposited the amount=>\t"+am+"\t"+"Total balance\t=>"+(bal+am)+"\n");
+
+		bal+=am;
+		System.out.println("successfully deposited!!");
+		break;
+		case 3:System.out.println("enter the ammount to withdraw (NOTE:minimum ammount is=500)");
+		int a=sc.nextInt();
+		if(a<500)
+		{
+			System.out.println("invalid ammount enter amount above 500");
+		}
+		else if(a>500 && bal<500||bal<a)
+		{
+			System.out.println("balance was not sufficient to withdraw or amount was not available");
+		}
+		else
+		{
+			System.out.println("you successfully withdraw the amount= "+a);
+			b.add("you successfully withdraw the amount=> "+a+"\t"+"Total Balance\t=>"+(bal-a)+"\n");
+			bal-=a;
+		}
+		break;
+		case 4:System.out.println("Your transaction history as below\n");
+			System.out.println(b);
+		break;
+		case 5:System.out.println("thank u for choosing our bank");
+		n=false;
+		
+		break;
+		default:System.out.println("invalid choice");
+		}
+
+
+
+	}}
+	else {
+		System.out.println("enter the valid username and password");
+	}
+	
+}
+}
