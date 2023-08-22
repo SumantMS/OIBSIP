@@ -1,0 +1,47 @@
+package hrrr;
+import java.util.Scanner;
+import java.util.Random;
+public class Hook
+{
+	public static void main(String args[])
+	{
+		Random random=new Random();
+		 boolean gus=false;
+		Scanner sc=new Scanner(System.in);
+		int num=random.nextInt(1,100);
+		System.out.println("Enter the Number i have Number between 1 and 100");
+		int guess=sc.nextInt();
+		int max=10;
+		while(max!=0)
+		{
+			if(guess==num)
+			{
+				gus=true;
+			}
+			else if(num>guess)
+			{
+				System.out.println("Entered number was less than guessing number");
+				System.out.println("Sorry your guess was incorrect you left with"+' '+(max-1)+' '+"attempts");
+				guess=sc.nextInt();
+				
+				
+			}
+			else {
+				System.out.println("Entered number was greater than guessing number");
+				System.out.println("Sorry your guess was incorrect you left with"+' '+(max-1)+' '+"attempts");
+				guess=sc.nextInt();
+				
+			}
+			max--;
+		}
+		if(gus)
+		{
+			System.out.print("Congratulation yours guess was correct!!");
+		}
+		else {
+			System.out.println("Good luck for next Time, your attempts are over(..)");
+			System.out.println("Hidden number is="+num);
+		}
+		
+	}
+}
